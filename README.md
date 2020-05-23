@@ -1,4 +1,7 @@
 # spring-boot-with-docker
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e4b367754520420fa3c94cc88c9abb23)](https://app.codacy.com/manual/nishantrajput1212/spring-boot-with-docker?utm_source=github.com&utm_medium=referral&utm_content=nishant121212/spring-boot-with-docker&utm_campaign=Badge_Grade_Dashboard)
+
 A users microservice to register and retrieve user. All the users created using this service will get stored in elasticsearch. This repo will demonstrate how to build docker image of Spring Boot microservice and connect it with other containers. Plus, I have created an elasticsearch repository using elasticsearch's high level REST client to POST and GET a user. All the services will run in separate docker containers but in same network say elk.
 
 ## Prerequisites

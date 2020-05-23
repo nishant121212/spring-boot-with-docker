@@ -38,3 +38,5 @@ OR run below commands
 	        -p 9212:9212 
 	        users-docker-service    
     
+### Kibana age count metric
+![Kibana visualisation](kibana.png)

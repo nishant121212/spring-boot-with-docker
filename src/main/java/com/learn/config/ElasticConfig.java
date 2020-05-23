@@ -18,10 +18,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Configuration
 public class ElasticConfig {
 	
-	@Value("${elasticsearch.host}")
+    @Value("${elasticsearch.host}")
     private String host;
 	
-	@Value("${elasticsearch.port}")
+    @Value("${elasticsearch.port}")
     private int port;
 
     @Bean

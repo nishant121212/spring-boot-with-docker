@@ -1,5 +1,8 @@
 package com.learn.controller.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import com.learn.entity.User;
 
 import lombok.AllArgsConstructor;
@@ -15,9 +18,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserRequest{
+	
+	@NotBlank(message = "name can not be null")
 	private String name;
+	
+	@NotBlank(message = "contact can not be null")
 	private String contact;
-	private int age;
+	
+	@NotNull(message = "age can not be null")
+	private Integer age;
 	
 	/**
 	 *

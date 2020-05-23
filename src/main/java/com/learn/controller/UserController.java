@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import javax.validation.Valid;
+
 import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.rest.RestStatus;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +35,7 @@ public class UserController {
 	private UserService userService;
 	
 	@PostMapping("/v1/users")
-	public ResponseEntity<Object> registerUser(@RequestBody UserRequest userRequest){
+	public ResponseEntity<Object> registerUser(@Valid @RequestBody UserRequest userRequest){
 		try {
 			String id = userService.registerUser(userRequest);
 			URI uri = new URI("/user-service/v1/users/" + id);

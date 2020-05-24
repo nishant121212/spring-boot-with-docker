@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:8-jdk-alpine
 MAINTAINER Nishant
 WORKDIR /opt/
 COPY target/users-docker-1.0.0-RELEASE.jar .

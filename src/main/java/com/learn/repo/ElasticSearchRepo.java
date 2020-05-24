@@ -32,7 +32,7 @@ public class ElasticSearchRepo{
 	private ObjectMapper objectMapper;
 	
 	/**
-	 * save data in elastic
+	 * save data with unique id
 	 * @param index Index Name
 	 * @param t data to be saved
 	 * @param id Id
@@ -41,15 +41,17 @@ public class ElasticSearchRepo{
 	 */
 	public <T> String save(String index, T t, String id) throws IOException{
 		IndexRequest indexRequest = new IndexRequest(index).type(TYPE)
-				.source(objectMapper.convertValue(t, Map.class))
-				.opType(OpType.CREATE);
-		if(null != id) indexRequest.id(id);
+				.source(objectMapper.convertValue(t, Map.class));
+		if(null != id) {
+			indexRequest.opType(OpType.CREATE);
+			indexRequest.id(id);
+		}
 		IndexResponse indexResponse = restHighLevelClient.index(indexRequest, RequestOptions.DEFAULT);
 		return indexResponse.getId();
 	}
 	
 	/**
-	 * save data in elastic
+	 * save data with id auto-generated
 	 * @param index Index Name
 	 * @param t data to be saved
 	 * @return Id
@@ -60,7 +62,7 @@ public class ElasticSearchRepo{
 	}
 
 	/**
-	 * 
+	 * fetch record by id
 	 * @param index Index Name
 	 * @param id Id
 	 * @param classT Requested object class

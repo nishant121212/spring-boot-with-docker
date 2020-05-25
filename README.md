@@ -26,6 +26,9 @@ Running Docker containers for elasticsearch and kibana.
         -p 5601:5601 
         kibana:7.6.2
 
+## OR use docker-compose
+    docker-compose up -d
+
 ### Build instructions
     mvn clean install
 

@@ -15,7 +15,7 @@ A users microservice to register and retrieve user. All the users created using 
     2. docker-compose up -d
 
 ### Standalone elastic and kibana containers
-    [docker-setup-elastic-kibana](https://github.com/nishant121212/HW-tutorial-docker-setup-elastic-kibana)
+[docker-setup-elastic-kibana](https://github.com/nishant121212/HW-tutorial-docker-setup-elastic-kibana)
 
 ### Kibana age count metric
 ![Kibana visualisation](kibana.png)
